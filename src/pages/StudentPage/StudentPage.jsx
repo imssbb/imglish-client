@@ -2,8 +2,41 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './StudentPage.scss';
+import { AudioRecorder } from 'react-audio-voice-recorder';
 
-//components
+const addAudioElement = (blob) => {
+  const url = URL.createObjectURL(blob);
+  console.log(blob);
+  const audio = document.createElement('audio');
+  audio.src = url;
+  audio.controls = true;
+  document.body.appendChild(audio);
+
+  const formData = new FormData();
+  formData.append('file', blob);
+  formData.append('upload_preset', 'your_upload_preset');
+
+  fetch('http://localhost:8080/api/upload', {
+    method: 'POST',
+    body: formData,
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error(
+          `Server error: ${response.status} ${response.statusText}`
+        );
+      }
+    })
+    .then((serverResponse) => {
+      console.log('Server response:', serverResponse);
+      // Handle the response from your server if needed
+    })
+    .catch((error) => {
+      console.error('Error communicating with the server:', error);
+    });
+};
 
 function StudentPage() {
   const params = useParams();
@@ -38,6 +71,26 @@ function StudentPage() {
     };
     getMissions();
   }, []);
+
+  const [loading, setLoading] = useState(false);
+  const [res, setRes] = useState({});
+  const [file, setFile] = useState(null);
+  const handleSelectFile = (e) => setFile(e.target.files[0]);
+  const uploadFile = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    const data = new FormData();
+    console.log(file);
+    data.set('sample_file', file);
+    try {
+      const res = await axios.post('http://localhost:8080/api/uploader', data);
+      setRes(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
@@ -99,6 +152,55 @@ function StudentPage() {
 
       <div>
         <h2>Audio Recording</h2>
+      </div>
+      <div className="audiorecorder">
+        {/* AUDIO RECORDING ON BROWSER */}
+        <AudioRecorder
+          onRecordingComplete={addAudioElement}
+          audioTrackConstraints={{
+            noiseSuppression: true,
+            echoCancellation: true,
+          }}
+          downloadOnSavePress={false}
+          downloadFileExtension="webm"
+        />
+
+        {/* UPLOAD TO CLOUDINARY */}
+        <div className="App">
+          <label htmlFor="file" className="btn-grey">
+            {' '}
+            Upload Your Mission Audio
+          </label>
+          <br />
+          <input
+            id="file"
+            type="file"
+            onChange={handleSelectFile}
+            multiple={false}
+          />
+          {file && <p className="file_name">{file.name}</p>}
+          <code>
+            {/* PLACE WHERE DATA LISTS AFTER UPLOADING  */}
+            {Object.keys(res).map(
+              (key) =>
+                key && (
+                  <p className="output-item" key={key}>
+                    <span>{key}:</span>
+                    <span>
+                      {typeof res[key] === 'object' ? 'object' : res[key]}
+                    </span>
+                  </p>
+                )
+            )}
+          </code>
+          {file && (
+            <>
+              <button className="btn-green" onClick={uploadFile}>
+                {loading ? 'uploading...' : 'upload to Cloudinary'}
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

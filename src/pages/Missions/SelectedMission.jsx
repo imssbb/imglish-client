@@ -8,6 +8,7 @@ import './SelectedMission.scss';
 function SelectedMission() {
   const params = useParams();
   const [selectedMission, setSelectedMission] = useState();
+  const [getAudio, setgetAudio] = useState();
 
   useEffect(() => {
     const getSelectedMission = async () => {
@@ -23,6 +24,21 @@ function SelectedMission() {
     getSelectedMission();
   }, [params.id]);
 
+  useEffect(() => {
+    const getMissionAudios = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/audios/${params.id}`
+        );
+        setgetAudio(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching Mission Audios:', error);
+      }
+    };
+    getMissionAudios();
+  }, [params.id]);
+
   return (
     <div>
       <p>Header</p>
@@ -33,6 +49,7 @@ function SelectedMission() {
             <h1>{selectedMission.mission_title}</h1>
             {/* Use preformatted text tag */}
             <pre>{selectedMission.intro_text}</pre>
+            <audio src={getAudio.audio_link} controls />
             <p>Listen & Fill-in:</p>
             <ul>
               {JSON.parse(selectedMission.empty_dialogue).entries.map(
