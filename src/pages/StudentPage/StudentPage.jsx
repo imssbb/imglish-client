@@ -81,7 +81,7 @@ function StudentPage() {
     e.preventDefault();
     const data = new FormData();
     console.log(file);
-    data.set('sample_file', file);
+    data.set('file', file);
     try {
       const res = await axios.post('http://localhost:8080/api/uploader', data);
       setRes(res.data);
