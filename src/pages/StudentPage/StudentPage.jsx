@@ -16,7 +16,7 @@ const addAudioElement = (blob) => {
   formData.append('file', blob);
   formData.append('upload_preset', 'your_upload_preset');
 
-  fetch('http://localhost:8080/api/upload', {
+  fetch(`${process.env.REACT_APP_API_URL}/api/upload`, {
     method: 'POST',
     body: formData,
   })
@@ -51,7 +51,7 @@ function StudentPage() {
     const getStudentInfo = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/student/${params.id}`
+          `${process.env.REACT_APP_API_URL}/student/${params.id}`
         );
         setStudent(response.data);
       } catch (error) {
@@ -64,7 +64,9 @@ function StudentPage() {
   useEffect(() => {
     const getMissions = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/missions`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/missions`
+        );
         setMissions(response.data[0]);
       } catch (error) {
         console.error('Error fetching missions:', error);
@@ -85,7 +87,10 @@ function StudentPage() {
     data.set('file', file);
     // data.set('student_id', params.id);
     try {
-      const res = await axios.post('http://localhost:8080/api/uploader', data);
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/uploader`,
+        data
+      );
       setRes(res.data);
       setUploadSuccess(true);
     } catch (error) {
@@ -123,11 +128,16 @@ function StudentPage() {
               {JSON.parse(missions.empty_dialogue).entries.map(
                 (entry, index) => (
                   <li key={index}>
-                    <strong>{entry.speaker}:</strong> {entry.text}
+                    <strong>{entry.speaker}:</strong>
+                    <input
+                      type="text"
+                      placeholder={`Type here! What do you hear? ${entry.speaker}`}
+                    />
                   </li>
                 )
               )}
             </ul>
+
             <p>{missions.spacing_text}</p>
             <p>Main Dialogue:</p>
             <ul>

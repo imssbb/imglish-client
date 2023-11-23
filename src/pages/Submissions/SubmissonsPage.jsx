@@ -7,26 +7,30 @@ import './SubmissionsPage.scss';
 
 function Submissions() {
   const [getsubmissions, setGetSubmissions] = useState();
+  const [error, setError] = useState(null);
   const params = useParams();
 
   useEffect(() => {
     const getSubmissions = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/submissions/${params.id}`
+          `${process.env.REACT_APP_API_URL}/submissions/${params.id}`
         );
         setGetSubmissions(response.data);
         console.log(response.data);
       } catch (error) {
         console.error('Error fetching submissions:', error);
+        setError('You have not submitted any missions! Go and record!');
       }
     };
 
     getSubmissions();
   }, [params.id]);
+
   return (
     <div>
       <h1>Submissions</h1>
+      {error && <p className="error">{error}</p>}
       {getsubmissions && (
         <ul>
           {getsubmissions.map((submission, index) => {

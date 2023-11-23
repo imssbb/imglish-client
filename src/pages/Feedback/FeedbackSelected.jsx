@@ -11,7 +11,7 @@ const FeedbackSelected = () => {
     const fetchSelectedFeedbacks = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/feedbacks/details/${id}`
+          `${process.env.REACT_APP_API_URL}/feedbacks/details/${id}`
         );
         setSelectedFeedbacks(response.data);
         console.log(response.data);
@@ -27,6 +27,7 @@ const FeedbackSelected = () => {
       <h1>{selectedFeedbacks.mission_title}</h1>
       {selectedFeedbacks && (
         <div>
+          <audio src={selectedFeedbacks.feedback_link} controls />
           <p>
             <strong>Feedback: </strong>
             {selectedFeedbacks.feedback}

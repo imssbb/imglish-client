@@ -14,7 +14,7 @@ function SelectedMission() {
     const getSelectedMission = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/missions/${params.id}`
+          `${process.env.REACT_APP_API_URL}/missions/${params.id}`
         );
         setSelectedMission(response.data);
       } catch (error) {
@@ -27,11 +27,14 @@ function SelectedMission() {
   useEffect(() => {
     const getMissionAudios = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/audios/`, {
-          params: {
-            missions_id: params.id,
-          },
-        });
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/audios/`,
+          {
+            params: {
+              missions_id: params.id,
+            },
+          }
+        );
         setgetAudio(response.data);
         console.log(response.data);
       } catch (error) {
@@ -63,7 +66,11 @@ function SelectedMission() {
               {JSON.parse(selectedMission.empty_dialogue).entries.map(
                 (entry, index) => (
                   <li key={index}>
-                    <strong>{entry.speaker}:</strong> {entry.text}
+                    <strong>{entry.speaker}:</strong>
+                    <input
+                      type="text"
+                      placeholder={`Type here! What do you hear? ${entry.speaker}`}
+                    />
                   </li>
                 )
               )}

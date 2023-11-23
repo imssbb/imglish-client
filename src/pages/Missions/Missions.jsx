@@ -11,7 +11,9 @@ function Missions() {
   useEffect(() => {
     const getMissions = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/missions`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/missions`
+        );
         setMissions(response.data);
       } catch (error) {
         console.error('Error fetching missions:', error);
@@ -40,35 +42,3 @@ function Missions() {
 }
 
 export default Missions;
-
-// {
-/* {missions &&
-        missions.map((mission) => (
-          <div key={mission.id}>
-            <h1>{mission.mission_title}</h1>
-            Use preformatted text tag
-            <pre>{mission.intro_text}</pre>
-            <p>Empty Dialogue:</p>
-            <ul>
-              {JSON.parse(mission.empty_dialogue).entries.map(
-                (entry, index) => (
-                  <li key={index}>
-                    <strong>{entry.speaker}:</strong> {entry.text}
-                  </li>
-                )
-              )}
-            </ul>
-            <p>{mission.spacing_text}</p>
-            <p>Main Dialogue:</p>
-            <ul>
-              {JSON.parse(mission.main_dialogue).entries.map((entry, index) => (
-                <li key={index}>
-                  <strong>{entry.speaker}:</strong> {entry.text}
-                </li>
-              ))}
-            </ul>
-            <p>Explanation: {mission.explanation}</p>
-            <p>Practice Pattern: {mission.practice_pattern}</p>
-          </div>
-        ))} */
-// }

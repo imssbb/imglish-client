@@ -11,7 +11,7 @@ const FeedbackList = () => {
     const fetchFeedbacks = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/feedbacks/${id}`
+          `${process.env.REACT_APP_API_URL}/feedbacks/${id}`
         );
         setFeedbacks(response.data);
       } catch (error) {
