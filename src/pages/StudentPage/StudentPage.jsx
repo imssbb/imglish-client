@@ -31,7 +31,10 @@ const addAudioElement = (blob) => {
     })
     .then((serverResponse) => {
       console.log('Server response:', serverResponse);
-      // Handle the response from your server if needed
+      const successMessage = document.createElement('div');
+      successMessage.textContent = 'Mission Uploaded Successfully!';
+      document.body.appendChild(successMessage);
+      // alert('Audio uploaded successfully!');
     })
     .catch((error) => {
       console.error('Error communicating with the server:', error);
@@ -42,6 +45,7 @@ function StudentPage() {
   const params = useParams();
   const [student, setStudent] = useState();
   const [missions, setMissions] = useState();
+  const [uploadSuccess, setUploadSuccess] = useState(null);
 
   useEffect(() => {
     const getStudentInfo = async () => {
@@ -57,14 +61,11 @@ function StudentPage() {
     getStudentInfo();
   }, [params.id]);
 
-  // WOULD HAVE TO FIGURE OUT HOW TO SPECIFY TODAY'S MISSION WITH DATES OR JUST SIMPLY SELECT AN ARRAY..
-  // FOR NOW, JUST DID A [0] INDEX
   useEffect(() => {
     const getMissions = async () => {
       try {
         const response = await axios.get(`http://localhost:8080/missions`);
         setMissions(response.data[0]);
-        console.log(response.data);
       } catch (error) {
         console.error('Error fetching missions:', error);
       }
@@ -82,11 +83,14 @@ function StudentPage() {
     const data = new FormData();
     console.log(file);
     data.set('file', file);
+    // data.set('student_id', params.id);
     try {
       const res = await axios.post('http://localhost:8080/api/uploader', data);
       setRes(res.data);
+      setUploadSuccess(true);
     } catch (error) {
       console.log(error);
+      setUploadSuccess(false);
     } finally {
       setLoading(false);
     }
@@ -97,7 +101,7 @@ function StudentPage() {
       <p>Header</p>
       <ul>
         <li>Missions</li>
-        <li>Submit</li>
+        <li>Submissions</li>
 
         <li>Feedback</li>
         <li>Profile</li>
@@ -179,25 +183,23 @@ function StudentPage() {
             multiple={false}
           />
           {file && <p className="file_name">{file.name}</p>}
-          <code>
-            {/* PLACE WHERE DATA LISTS AFTER UPLOADING  */}
-            {Object.keys(res).map(
-              (key) =>
-                key && (
-                  <p className="output-item" key={key}>
-                    <span>{key}:</span>
-                    <span>
-                      {typeof res[key] === 'object' ? 'object' : res[key]}
-                    </span>
-                  </p>
-                )
-            )}
-          </code>
+
           {file && (
             <>
               <button className="btn-green" onClick={uploadFile}>
-                {loading ? 'uploading...' : 'upload to Cloudinary'}
+                {loading ? 'uploading...' : 'Upload Your Mission!'}
               </button>
+              {uploadSuccess !== null && (
+                <p
+                  className={
+                    uploadSuccess ? 'success-message' : 'error-message'
+                  }
+                >
+                  {uploadSuccess
+                    ? 'Mission upload successful!'
+                    : 'Error uploading file'}
+                </p>
+              )}
             </>
           )}
         </div>

@@ -7,6 +7,9 @@ import Home from './pages/Home/Home';
 import Missions from './pages/Missions/Missions';
 import SelectedMission from './pages/Missions/SelectedMission';
 import StudentPage from './pages/StudentPage/StudentPage';
+import FeedbackList from './pages/Feedback/FeedbackList';
+import FeedbackSelected from './pages/Feedback/FeedbackSelected';
+import Submissions from './pages/Submissions/SubmissonsPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -24,25 +27,20 @@ function App() {
           // MISSION
           <Route path="/missions" element={<Missions />}></Route>
           <Route path="/missions/:id" element={<SelectedMission />}></Route>
-          {/* <Route
-            path="/student/:id/missions/:missionID"
-            element={<StudentPage />}
-          ></Route> */}
           // FEEDBACK
-          <Route path="/student/:id/feedback" element={<StudentPage />}></Route>
           <Route
-            path="/student/:id/feedback/:feddbackID"
-            element={<StudentPage />}
-          ></Route>
-          {/* // SUBMISSION
-          <Route
-            path="/student/:id/submission"
-            element={<StudentPage />}
+            path="/feedbacks/:id"
+            // path="/student/:id/feedbacks"
+
+            element={<FeedbackList />}
           ></Route>
           <Route
-            path="/student/:id/submission/:submissionID"
-            element={<StudentPage />}
-          ></Route> */}
+            path="/feedbacks/details/:id"
+            // path="/student/:id/feedbacks/details/:id"
+            element={<FeedbackSelected />}
+          ></Route>
+          // SUBMISSION
+          <Route path="/submissions/:id" element={<Submissions />}></Route>
         </Routes>
       </div>
       {/* <Footer /> */}

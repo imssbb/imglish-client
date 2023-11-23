@@ -27,9 +27,11 @@ function SelectedMission() {
   useEffect(() => {
     const getMissionAudios = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8080/audios/${params.id}`
-        );
+        const response = await axios.get(`http://localhost:8080/audios/`, {
+          params: {
+            missions_id: params.id,
+          },
+        });
         setgetAudio(response.data);
         console.log(response.data);
       } catch (error) {
@@ -39,6 +41,10 @@ function SelectedMission() {
     getMissionAudios();
   }, [params.id]);
 
+  const renderAudio = (audioLink) => {
+    return audioLink ? <audio src={audioLink} controls /> : null;
+  };
+
   return (
     <div>
       <p>Header</p>
@@ -47,9 +53,11 @@ function SelectedMission() {
         {selectedMission && (
           <div key={selectedMission.id}>
             <h1>{selectedMission.mission_title}</h1>
-            {/* Use preformatted text tag */}
+
             <pre>{selectedMission.intro_text}</pre>
-            <audio src={getAudio.audio_link} controls />
+
+            {renderAudio(getAudio && getAudio[0].audio_link)}
+
             <p>Listen & Fill-in:</p>
             <ul>
               {JSON.parse(selectedMission.empty_dialogue).entries.map(
@@ -88,6 +96,9 @@ function SelectedMission() {
             </ul>
 
             <p>Practice:</p>
+            <p>regular speed</p>
+            {renderAudio(getAudio && getAudio[1].audio_link)}
+
             <ul>
               {JSON.parse(selectedMission.practice_pattern).entries.map(
                 (entry, index) => (
@@ -96,6 +107,14 @@ function SelectedMission() {
                   </li>
                 )
               )}
+            </ul>
+            <p>Break it down:</p>
+
+            <ul>
+              <li>{renderAudio(getAudio && getAudio[2].audio_link)}</li>
+              <li>{renderAudio(getAudio && getAudio[3].audio_link)}</li>
+              <li>{renderAudio(getAudio && getAudio[4].audio_link)}</li>
+              <li>{renderAudio(getAudio && getAudio[5].audio_link)}</li>
             </ul>
           </div>
         )}
