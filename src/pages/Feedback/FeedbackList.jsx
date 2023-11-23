@@ -29,7 +29,8 @@ const FeedbackList = () => {
         {feedbacks.map((feedback) => (
           <li key={feedback.id}>
             <Link to={`/feedbacks/details/${feedback.id}`}>
-              <strong>{feedback.mission_title}:</strong> {feedback.feedback}
+              <p>{feedback.mission_title}:</p>
+              <p>{feedback.feedback}</p>
             </Link>
           </li>
         ))}

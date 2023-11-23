@@ -36,7 +36,6 @@ function SelectedMission() {
           }
         );
         setgetAudio(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error('Error fetching Mission Audios:', error);
       }
@@ -86,8 +85,8 @@ function SelectedMission() {
                 )
               )}
             </ul>
-            <p>Explanation: {selectedMission.explanation}</p>
 
+            <p>Today's Pattern</p>
             <ul>
               {JSON.parse(selectedMission.pattern_summary).entries.map(
                 (entry, index) => (
@@ -131,36 +130,3 @@ function SelectedMission() {
 }
 
 export default SelectedMission;
-
-// const MissionComponent = ({ missionData }) => {
-//   const { empty_dialogue } = missionData;
-//   const parsedDialogue = JSON.parse(empty_dialogue);
-//   const [userInputs, setUserInputs] = useState(parsedDialogue.entries.map(() => ''));
-
-//   const handleInputChange = (index, value) => {
-//     const newInputs = [...userInputs];
-//     newInputs[index] = value;
-//     setUserInputs(newInputs);
-//   };
-
-//   return (
-//     <div>
-//       <h2>{parsedDialogue.title}</h2>
-//       {parsedDialogue.entries.map((entry, index) => (
-//         <div key={index}>
-//           <p>{entry.speaker}:
-//             {entry.text !== '' ? entry.text :
-//               <input
-//                 type="text"
-//                 value={userInputs[index]}
-//                 onChange={(e) => handleInputChange(index, e.target.value)}
-//                 placeholder="Type your dialogue here"
-//               />}
-//           </p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default MissionComponent;

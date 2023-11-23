@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './StudentPage.scss';
 import { AudioRecorder } from 'react-audio-voice-recorder';
+import SelectedMission from '../Missions/SelectedMission';
 
 const addAudioElement = (blob) => {
   const url = URL.createObjectURL(blob);
@@ -119,49 +120,7 @@ function StudentPage() {
 
       <div>
         <h1>Today's Mission</h1>
-        {missions && (
-          <div key={missions.id}>
-            <h1>{missions.mission_title}</h1>
-            <pre>{missions.intro_text}</pre>
-            <p>Fill-in the Dialogue:</p>
-            <ul>
-              {JSON.parse(missions.empty_dialogue).entries.map(
-                (entry, index) => (
-                  <li key={index}>
-                    <strong>{entry.speaker}:</strong>
-                    <input
-                      type="text"
-                      placeholder={`Type here! What do you hear? ${entry.speaker}`}
-                    />
-                  </li>
-                )
-              )}
-            </ul>
-
-            <p>{missions.spacing_text}</p>
-            <p>Main Dialogue:</p>
-            <ul>
-              {JSON.parse(missions.main_dialogue).entries.map(
-                (entry, index) => (
-                  <li key={index}>
-                    <strong>{entry.speaker}:</strong> {entry.text}
-                  </li>
-                )
-              )}
-            </ul>
-            <p>Explanation: {missions.explanation}</p>
-            <p>Practice Pattern:</p>
-            <ul>
-              {JSON.parse(missions.practice_pattern).entries.map(
-                (entry, index) => (
-                  <li key={index}>
-                    <strong>{entry.speaker}:</strong> {entry.text}
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-        )}
+        {missions && <SelectedMission mission={missions} />}
       </div>
 
       <div>

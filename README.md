@@ -2,7 +2,7 @@
 
 ## Overview
 
-Imglish is an innovative language learning platform designed to enhance English proficiency, with a primary focus on pronunciation. Through Imglish, users can access tailored lessons and missions aimed at refining their pronunciation skills. The unique feature of the platform lies in its audio submission and feedback system, allowing students to submit their audio recordings for personalized assessments. The app provides constructive feedback in audio format, guiding users on areas for improvement and creating an immersive learning experience.
+Imglish is an innovative language learning platform designed to enhance English proficiency, with a primary focus on pronunciation. Through Imglish, users can access tailored missions aimed at refining their pronunciation skills. The unique feature of the platform lies in its audio submission and feedback system, allowing students to submit their audio recordings for personalized assessments. The app provides constructive feedback in audio format, guiding users on areas for improvement and creating an immersive learning experience.
 
 ### Problem
 

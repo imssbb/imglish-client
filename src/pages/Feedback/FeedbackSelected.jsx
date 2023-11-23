@@ -14,7 +14,6 @@ const FeedbackSelected = () => {
           `${process.env.REACT_APP_API_URL}/feedbacks/details/${id}`
         );
         setSelectedFeedbacks(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error('Error fetching feedbacks:', error);
       }
@@ -28,6 +27,16 @@ const FeedbackSelected = () => {
       {selectedFeedbacks && (
         <div>
           <audio src={selectedFeedbacks.feedback_link} controls />
+          <ul>
+            {selectedFeedbacks.main_dialogue &&
+              JSON.parse(selectedFeedbacks.main_dialogue).entries.map(
+                (entry, index) => (
+                  <li key={index}>
+                    <strong>{entry.speaker}:</strong> {entry.text}
+                  </li>
+                )
+              )}
+          </ul>
           <p>
             <strong>Feedback: </strong>
             {selectedFeedbacks.feedback}
