@@ -1,0 +1,47 @@
+.button {
+  //   margin: 0 0.5rem;
+  padding: 0.5rem 2rem;
+  background-color: #fae252;
+  color: #191918;
+  border: 1px solid #191918;
+
+  cursor: pointer;
+  &:hover {
+    background-color: #2980b9;
+  }
+}
+
+.header {
+  // display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: #fae252;
+  color: #191918;
+
+  &__logo {
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  // &__container {
+  //   // display: flex;
+  // }
+
+  &__page {
+    margin: 0 2rem;
+    text-decoration: none;
+    color: #191918;
+  }
+
+  &__signin-button {
+    background-color: white;
+  }
+
+  &__signup-button {
+    background-color: #191918;
+    color: white;
+  }
+}

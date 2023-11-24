@@ -4,7 +4,38 @@
 ul {
   list-style-type: none;
 }
-.audiorecorder {
+.audio {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+
+  &__record {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__record-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 1rem;
+  }
+
+  &__upload {
+    margin: 2rem;
+  }
+  &__upload-title {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+}
+
+.student-page {
+  position: relative;
+  &__title {
+    margin: 2rem 0;
+  }
+  &__mission {
+  }
 }

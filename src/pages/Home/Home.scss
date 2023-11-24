@@ -1,2 +1,17 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
+
+.home {
+}
+
+.hero {
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__image {
+    width: 50%;
+  }
+}

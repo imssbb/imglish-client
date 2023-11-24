@@ -48,15 +48,15 @@ function SelectedMission() {
   };
 
   return (
-    <div>
-      <p>Header</p>
-
+    <div className="selectedmission">
       <div>
         {selectedMission && (
           <div key={selectedMission.id}>
             <h1>{selectedMission.mission_title}</h1>
 
-            <pre>{selectedMission.intro_text}</pre>
+            <pre className="selectedmission__pre">
+              {selectedMission.intro_text}
+            </pre>
 
             {renderAudio(getAudio && getAudio[0].audio_link)}
 

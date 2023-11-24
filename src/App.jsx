@@ -8,14 +8,14 @@ import StudentPage from './pages/StudentPage/StudentPage';
 import FeedbackList from './pages/Feedback/FeedbackList';
 import FeedbackSelected from './pages/Feedback/FeedbackSelected';
 import Submissions from './pages/Submissions/SubmissonsPage';
-// import Header from './components/Header/Header';
-// import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <Header /> */}
+        <Header />
 
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -34,7 +34,7 @@ function App() {
           <Route path="/submissions/:id" element={<Submissions />}></Route>
         </Routes>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
