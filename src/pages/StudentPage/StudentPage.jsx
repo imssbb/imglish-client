@@ -50,7 +50,7 @@ function StudentPage() {
   const [student, setStudent] = useState();
   const [missions, setMissions] = useState();
   const [uploadSuccess, setUploadSuccess] = useState(null);
-  const [selectedOption, setSelectedOption] = useState('record'); // Default option
+  const [selectedOption, setSelectedOption] = useState(''); // Default option
 
   useEffect(() => {
     const getStudentInfo = async () => {
@@ -124,21 +124,20 @@ function StudentPage() {
       </div>
 
       <div className="audio">
-        <h2>Submit Your Mission</h2>
+        <h2 className="audio__title">Submit Your Mission</h2>
 
         {/* Toggle button for selecting recording or uploading */}
         <div className="audio__toggle-options">
-          <p className="audio__toggle-question">Do you want to</p>
           <button
             onClick={() => setSelectedOption('record')}
-            className={selectedOption === 'record' ? 'active' : ''}
+            className={`button ${selectedOption === 'record' ? 'active' : ''}`}
           >
             Record Now
           </button>
-          <span>or</span>
+          <span className="audio__toggle-spacer">or</span>
           <button
             onClick={() => setSelectedOption('upload')}
-            className={selectedOption === 'upload' ? 'active' : ''}
+            className={`button ${selectedOption === 'upload' ? 'active' : ''}`}
           >
             Upload
           </button>
@@ -162,9 +161,10 @@ function StudentPage() {
 
         {selectedOption === 'upload' && (
           <div className="audio__upload">
-            <label htmlFor="file" className="audio__upload-title">
+            <p className="audio__upload-title">Upload Your Audio</p>
+
+            <label className="audio__fileselect" htmlFor="file">
               {' '}
-              Upload Your Mission Audio
             </label>
             <br />
             <input
@@ -173,6 +173,7 @@ function StudentPage() {
               onChange={handleSelectFile}
               multiple={false}
             />
+
             {file && <p className="file_name">{file.name}</p>}
 
             {file && (

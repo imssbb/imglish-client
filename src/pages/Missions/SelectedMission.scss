@@ -1,6 +1,32 @@
 .selectedmission {
+  padding: 3rem;
+
+  &__title {
+  }
+
   &__pre {
     white-space: pre-wrap; // This allows wrapping on long lines
     overflow-wrap: break-word; // This ensures that long words don't overflow
+    margin: 2rem 0;
+  }
+
+  &__fill-in {
+    margin: 2rem 0;
+  }
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__input {
+    margin-bottom: 1rem;
+    height: 1.7rem;
+    padding: 0 1.5rem;
+
+    border: none;
+  }
+
+  &__spacing {
+    margin: 5rem 0;
   }
 }
