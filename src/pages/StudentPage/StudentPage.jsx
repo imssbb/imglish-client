@@ -114,14 +114,17 @@ function StudentPage() {
         <Sidebar />
 
         {student && (
-          <h2 className="student-page__title">{`Hey, ${student.name}!`}</h2>
+          <h2 className="student-page__studentname">{`Hey, ${student.name}! 🚀`}</h2>
         )}
 
         <div className="student-page__mission">
-          <h2>Today's Mission</h2>
-          {missions && <SelectedMission mission={missions} />}
+          <h2 className="student-page__today">
+            Ready for another mission today?
+          </h2>
         </div>
       </div>
+
+      {missions && <SelectedMission mission={missions} />}
 
       <div className="audio">
         <h2 className="audio__title">Submit Your Mission</h2>
@@ -132,7 +135,7 @@ function StudentPage() {
             onClick={() => setSelectedOption('record')}
             className={`button ${selectedOption === 'record' ? 'active' : ''}`}
           >
-            Record Now
+            Record
           </button>
           <span className="audio__toggle-spacer">or</span>
           <button

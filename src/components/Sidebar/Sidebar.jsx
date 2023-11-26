@@ -1,4 +1,3 @@
-// import React, { useState } from 'react';
 import './Sidebar.scss';
 function Sidebar() {
   return (
@@ -7,16 +6,16 @@ function Sidebar() {
         <div></div>
       </div>
 
-      <a className="navicon__menu" href="hi">
+      <a className="navicon__menu" href="/missions">
         Missions
       </a>
-      <a className="navicon__menu" href="hi">
+      <a className="navicon__menu" href="/submissions/1">
         Submissions
       </a>
-      <a className="navicon__menu" href="hi">
+      <a className="navicon__menu" href="/feedbacks/1">
         Feedback
       </a>
-      <a className="navicon__menu" href="hi">
+      <a className="navicon__menu" href="/">
         Profile
       </a>
     </nav>

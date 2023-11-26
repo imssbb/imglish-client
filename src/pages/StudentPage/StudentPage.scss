@@ -4,6 +4,7 @@
 ul {
   list-style-type: none;
 }
+
 .audio {
   display: flex;
   flex-direction: column;
@@ -47,9 +48,13 @@ ul {
 
 .student-page {
   position: relative;
-  &__title {
-    margin: 2rem 0;
+  &__studentname {
+    margin: 2rem 2rem 0;
+    font-size: 3rem;
   }
   &__mission {
+  }
+
+  &__today {
   }
 }
