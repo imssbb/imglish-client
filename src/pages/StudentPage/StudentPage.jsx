@@ -4,7 +4,7 @@ import axios from 'axios';
 import './StudentPage.scss';
 import { AudioRecorder } from 'react-audio-voice-recorder';
 import SelectedMission from '../Missions/SelectedMission';
-import Sidebar from '../../components/Sidebar/Sidebar'; // Import your Sidebar component
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 const addAudioElement = (blob) => {
   const url = URL.createObjectURL(blob);
@@ -13,7 +13,6 @@ const addAudioElement = (blob) => {
   audio.src = url;
   audio.controls = true;
 
-  // append to App Container
   const appContainer = document.querySelector('.App');
   appContainer.appendChild(audio);
 
@@ -52,6 +51,7 @@ function StudentPage() {
   const [uploadSuccess, setUploadSuccess] = useState(null);
   const [selectedOption, setSelectedOption] = useState(''); // Default option
 
+  // Fetch student information when the component mounts
   useEffect(() => {
     const getStudentInfo = async () => {
       try {
@@ -66,6 +66,7 @@ function StudentPage() {
     getStudentInfo();
   }, [params.id]);
 
+  // Fetch missions when the component mounts
   useEffect(() => {
     const getMissions = async () => {
       try {

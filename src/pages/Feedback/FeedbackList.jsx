@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './FeedbackList.scss';
 
 const FeedbackList = () => {
   const { id } = useParams();
@@ -23,14 +24,16 @@ const FeedbackList = () => {
   }, [id]);
 
   return (
-    <div>
-      <h1>Feedback</h1>
+    <div className="feedbacklist">
+      <h1 className="feedbacklist__title">Feedback</h1>
       <ul>
         {feedbacks.map((feedback) => (
-          <li key={feedback.id}>
+          <li className="feedbacklist__container" key={feedback.id}>
             <Link to={`/feedbacks/details/${feedback.id}`}>
-              <p>{feedback.mission_title}:</p>
-              <p>{feedback.feedback}</p>
+              <p className="feedbacklist__list feedbacklist__mission">
+                {feedback.mission_title}:
+              </p>
+              <p className="feedbacklist__list">{feedback.feedback}</p>
             </Link>
           </li>
         ))}

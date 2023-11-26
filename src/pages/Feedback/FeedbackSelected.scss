@@ -1,7 +1,8 @@
 @use '../../styles/partials/mixin' as *;
 
-.missionlist {
+.feedbackselected {
   position: relative;
+
   &__title {
     background-color: #191918;
     color: white;
@@ -19,13 +20,28 @@
   }
 
   &__container {
-    margin: 3rem 0 4rem;
+    margin: 2rem 0 4rem;
+  }
+
+  &__list-container {
+    border: 1px solid black;
+    margin: 1rem auto;
+    border-radius: 4px;
+    max-width: 60%;
   }
   &__list {
-    margin: 1.5rem;
+    margin: 1rem;
     color: #191918;
     &:hover {
-      color: orange;
+      color: #ffb400;
     }
+  }
+
+  &__feedback {
+    margin: 1rem auto;
+    background-color: #f1f3f4;
+    padding: 1rem;
+    width: 60%;
+    border-radius: 4px;
   }
 }

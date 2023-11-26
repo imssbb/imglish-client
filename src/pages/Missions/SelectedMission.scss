@@ -2,13 +2,13 @@
 
 .selectedmission {
   padding: 0 3rem 3rem;
+  position: relative;
 
   &__title {
-    // color: #ff6c02;
     background-color: #191918;
     color: white;
     max-width: 20rem;
-    margin: 3rem auto;
+    margin: 3rem auto 1rem;
     border-radius: 5px;
     padding: 0.5rem;
   }
@@ -16,16 +16,17 @@
   &__pre {
     white-space: pre-wrap; // This allows wrapping on long lines
     overflow-wrap: break-word; // This ensures that long words don't overflow
-    margin: 2rem 0;
+    margin: 2rem auto;
   }
 
   &__fill-in {
-    margin: 2rem 0;
+    margin: 3rem 0 2rem;
   }
   &__input-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 3rem;
   }
   &__input {
     margin-bottom: 1rem;
@@ -45,18 +46,22 @@
     background-color: #191918;
     color: white;
     max-width: 17rem;
-    margin: 1rem auto 0.75rem;
+    margin: 1rem auto 1rem;
     border-radius: 5px;
     padding: 0.5rem;
   }
 
   &__pattern-title {
-    margin: 2rem auto 0.75rem;
+    margin: 3rem auto 1rem;
     background-color: #191918;
     color: white;
     max-width: 12rem;
     border-radius: 5px;
     padding: 0.5rem;
+
+    @include tablet {
+      margin: 4rem auto 1rem;
+    }
   }
 
   &__input-container {
@@ -89,9 +94,12 @@
     background-color: #191918;
     color: white;
     max-width: 12rem;
-    margin: 2rem auto 0.75rem;
+    margin: 3rem auto 1rem;
     border-radius: 5px;
     padding: 0.5rem;
+    @include tablet {
+      margin: 4rem auto 1rem;
+    }
   }
 
   &__practice-detail {
@@ -111,6 +119,7 @@
     border: 1px solid black;
     border-radius: 4px;
     margin: 2rem 0;
+    padding: 0 1rem 0;
 
     @include tablet {
       border: none;
@@ -137,7 +146,7 @@
   }
 
   &__audio {
-    margin: 0.75rem 0 2.5rem;
+    margin: 1rem 0 2.5rem;
     @include tablet {
       margin: 3rem;
     }

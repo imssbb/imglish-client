@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './SubmissionsPage.scss';
 
-//components
-
 function Submissions() {
   const [getsubmissions, setGetSubmissions] = useState();
   const [error, setError] = useState(null);
@@ -28,8 +26,8 @@ function Submissions() {
   }, [params.id]);
 
   return (
-    <div>
-      <h1>Submissions</h1>
+    <div className="submissions">
+      <h1 className="submissions__title">Submissions</h1>
       {error && <p className="error">{error}</p>}
       {getsubmissions && (
         <ul>
@@ -38,10 +36,14 @@ function Submissions() {
             const updatedAt = new Date(submission.updated_at).toLocaleString();
 
             return (
-              <li key={index}>
+              <li key={index} className="submissions__container">
                 <p>Missions: {submission.missions_id}</p>
                 <p>Uploaded At: {updatedAt}</p>
-                <audio src={submission.audio_link} controls />
+                <audio
+                  className="submissions__audio"
+                  src={submission.audio_link}
+                  controls
+                />
               </li>
             );
           })}

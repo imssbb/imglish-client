@@ -1,28 +1,33 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
-
-body {
-  font: 100% Roboto, sans-serif;
-}
+// @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@use '../../styles/partials/mixin' as *;
 
 .sidebar {
   position: absolute;
   top: -0.6rem;
 
-  width: 300px;
-  background: white;
+  width: 100%;
+  background: #191918;
   color: rgba(0, 0, 0, 0.87);
   -webkit-clip-path: circle(24px at 30px 24px);
   clip-path: circle(24px at 32px 24px);
   -webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
   transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+  color: white;
+  border-radius: 7px;
+  padding-bottom: 2rem;
 
   &:hover {
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    -webkit-transition-duration: 0.75s;
-    transition-duration: 0.75s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
     -webkit-clip-path: circle(390px at 225px 24px);
     clip-path: circle(390px at 150px 24px);
+  }
+
+  @include tablet {
+    width: 300px;
+    margin-left: 2rem;
   }
 }
 
@@ -37,7 +42,7 @@ body {
     text-decoration: none;
     display: block;
     line-height: 50px;
-    padding: 0 20px;
+    padding: 0 50px;
     color: inherit;
     cursor: pointer;
     -webkit-user-select: none;
@@ -46,7 +51,8 @@ body {
     user-select: none;
 
     &:hover {
-      background: #ffe082;
+      background: white;
+      color: black;
     }
   }
 }
@@ -55,7 +61,7 @@ body {
   position: relative;
   width: 20px;
   height: 2px;
-  background: rgba(0, 0, 0, 0.87);
+  background: white;
 }
 
 .navicon div:before,
@@ -64,7 +70,8 @@ body {
   content: '';
   width: 20px;
   height: 2px;
-  background: rgba(0, 0, 0, 0.87);
+  background: white;
+
   position: absolute;
 }
 

@@ -67,7 +67,7 @@ function SelectedMission() {
 
           {renderAudio(getAudio && getAudio[0].audio_link)}
 
-          <h3 className="selectedmission__fill-in">Listen & Fill-in : 🎧</h3>
+          <h3 className="selectedmission__fill-in">Listen & Fill-in :</h3>
           <ul className="selectedmission__input-container">
             {JSON.parse(selectedMission.empty_dialogue).entries.map(
               (entry, index) => (

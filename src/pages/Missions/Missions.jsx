@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Missions.scss';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 //components
 
@@ -23,20 +24,19 @@ function Missions() {
   }, []);
 
   return (
-    <div>
-      <h1>Missions Page</h1>
-      <div>
-        <ul>
-          {missions &&
-            missions.map((mission) => (
-              <li key={mission.id}>
-                <Link to={`/missions/${mission.id}`}>
-                  <h2>{mission.mission_title}</h2>
-                </Link>
-              </li>
-            ))}
-        </ul>
-      </div>
+    <div className="missionlist">
+      <Sidebar />
+      <h1 className="missionlist__title">Missions Page</h1>
+      <ul className="missionlist__container">
+        {missions &&
+          missions.map((mission) => (
+            <li key={mission.id}>
+              <Link to={`/missions/${mission.id}`}>
+                <h3 className="missionlist__list">{mission.mission_title}</h3>
+              </Link>
+            </li>
+          ))}
+      </ul>
     </div>
   );
 }
