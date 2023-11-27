@@ -27,14 +27,12 @@ The backend for Imglish is hosted in a separate repository. You can find it here
 
    ```bash
    git clone https://github.com/imssbb/imglish-client.git
-
    ```
 
 2. Navigate to the project directory:
 
    ```bash
    cd imglish-client
-
    ```
 
 3. Install dependencies:
@@ -47,7 +45,6 @@ The backend for Imglish is hosted in a separate repository. You can find it here
 
    ```bash
    npm start
-
    ```
 
 ### Backend
@@ -79,6 +76,8 @@ The backend for Imglish is hosted in a separate repository. You can find it here
    ```bash
    npm start
    ```
+
+### Note: Ensure that you have the necessary credentials (cloud name, API key, API secret) for using the Cloudinary API. These credentials should be configured in the appropriate environment files or variables.
 
 ### Problem
 
