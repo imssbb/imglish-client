@@ -24,6 +24,9 @@ audio {
 
 a {
   text-decoration: none;
+  &:visited {
+    color: #191918;
+  }
 }
 
 .button {

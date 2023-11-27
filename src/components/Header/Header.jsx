@@ -5,31 +5,23 @@ import './Header.scss';
 const Header = () => {
   return (
     <div className="header">
-      <div className="header__logo">
+      <div className="header__logo-container">
         <Link to="/" className="header__page">
           <h1 className="header__title">Imglish</h1>
         </Link>
       </div>
       <ul className="header__container">
-        <li>
-          <Link to="/" className="header__page">
-            Home
-          </Link>
+        <li className="header__page">
+          <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/about" className="header__page">
-            About
-          </Link>
+        <li className="header__page">
+          <Link to="/about">About</Link>
         </li>
-        <li>
-          <Link to="/service" className="header__page">
-            Services
-          </Link>
+        <li className="header__page">
+          <Link to="/service">Services</Link>
         </li>
-        <li>
-          <Link to="/Contact" className="header__page">
-            Contact
-          </Link>
+        <li className="header__page">
+          <Link to="/Contact">Contact</Link>
         </li>
       </ul>
       <div className="header__button-container">

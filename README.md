@@ -4,6 +4,82 @@
 
 Imglish is an innovative language learning platform designed to enhance English proficiency, with a primary focus on pronunciation. Through Imglish, users can access tailored missions aimed at refining their pronunciation skills. The unique feature of the platform lies in its audio submission and feedback system, allowing students to submit their audio recordings for personalized assessments. The app provides constructive feedback in audio format, guiding users on areas for improvement and creating an immersive learning experience.
 
+## Table of Contents
+
+- [Backend Repository](#backend-repository)
+- [Installation](#installation)
+- [Problem](#problem)
+- [User Profile](#user-profile)
+- [Features](#features)
+- [Implementation](#implementation)
+- [Roadmap](#roadmap)
+- [Nice-to-haves](#nice-to-haves)
+
+### Backend Repository
+
+The backend for Imglish is hosted in a separate repository. You can find it here.
+
+## Installation
+
+### Frontend
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/imssbb/imglish-client.git
+
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd imglish-client
+
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Run the development server:
+
+   ```bash
+   npm start
+
+   ```
+
+### Backend
+
+1. Clone the backend repository:
+   ```bash
+   npm start
+   ```
+2. Navigat to the backend project directory:
+   ```bash
+   cd imglish-api
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Set up your database:
+
+- Create a MySQL database.
+- Configure the database connection in the .env file.
+
+1. Run migrations and seed data:
+   ```bash
+   npm run migrate
+   npm run seed
+   ```
+2. Start the backend server:
+   ```bash
+   npm start
+   ```
+
 ### Problem
 
 The need for Imglish arose from a recognized gap in language learning resources, particularly in the domain of pronunciation. As conventional resources often lack personalized daily missions and the provision of private audio-based feedback. Imglish addresses this gap by providing a centralized platform where users can receive targeted lessons, engage in daily missions, and receive constructive, individualized audio feedback to refine their pronunciation skills effectively.
@@ -100,30 +176,54 @@ The need for Imglish arose from a recognized gap in language learning resources,
 
 ### Endpoints
 
-1. **Imglish Information Endpoint:**
+Below are the main endpoints provided by the Imglish API:
 
-   - GET /api/info
-   - Retrieve information about Imglish.
+1. **Welcome Endpoint:**
 
-2. **Student Information Endpoint:**
+   - **Endpoint:** `GET /`
+   - **Description:** Basic home route welcoming users to Imglish API.
+   - **Usage:** Accessing this endpoint will return a welcome message.
+   - **Example:** [http://localhost:5050/](http://localhost:5050/)
 
-   - GET /api/student/:id
-   - Retrieve student information.
+2. **Mission Endpoints:**
 
-3. **Missions Endpoint:**
+   - **Endpoint:** `GET /missions`
+   - **Description:** Retrieve a list of missions for English learners.
+   - **Usage:** Accessing this endpoint will provide a list of missions tailored to improve pronunciation.
 
-   - GET /api/student/:id/missions
-   - Retrieve a list of missions for a specific student.
+3. **Student Endpoints:**
 
-4. **Submit Audio for missions Endpoint:**
+   - **Endpoint:** `GET /student/:id`
+   - **Description:** Retrieve information for a specific student.
+   - **Usage:** Accessing this endpoint with a valid student ID will return details about the student.
 
-   - POST /api/student/:id/missionss/:missionsId/submit-audio
-   - Submit audio recording for a specific mission.
+4. **Audio Endpoints:**
 
-5. **Feedback Endpoint:**
+   - **Endpoint:** `GET /audios/:id`
+   - **Description:** Retrieve audio recordings for missions and lessons.
+   - **Usage:** Accessing this endpoint with a valid ID will return audio recordings associated with the specified mission or lesson.
 
-   - GET /api/student/:id/feedback/:lessonId
-   - Retrieve feedback for a specific lesson.
+5. **Feedback Endpoints:**
+
+   - **Endpoint:** `GET /feedbacks/:id`
+   - **Description:** Retrieve feedback for a specific lesson.
+   - **Usage:** Accessing this endpoint with a valid ID will return feedback related to the specified lesson.
+
+6. **Submission Endpoints:**
+
+   - **Endpoint:** `GET /submissions/:id`
+   - **Description:** Retrieve submissions for missions and lessons.
+   - **Usage:** Accessing this endpoint with a valid ID will return submissions associated with the specified mission or lesson.
+
+7. **Uploader Endpoint:**
+
+   - **Endpoint:** `GET /api`
+   - **Description:** Access uploader API for file uploads.
+   - **Usage:** Accessing this endpoint provides access to the uploader API for handling file uploads.
+
+**Note:** Ensure that the Imglish API server is running and configured according to the provided server.js file. The base URL for the API would be [http://localhost:5050](http://localhost:5050), but replace the port if you've configured it differently.
+
+Feel free to modify this documentation based on any additional features or changes in your API implementation.
 
 ### Auth
 

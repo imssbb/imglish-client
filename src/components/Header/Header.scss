@@ -2,14 +2,12 @@
 
 .header {
   align-items: center;
-  padding: 0 2rem;
   background-color: #fae252;
+  height: 100%;
+  padding-bottom: 0.5rem;
   @include tablet {
     display: flex;
     justify-content: space-around;
-  }
-
-  &__logo {
   }
 
   &__title {
@@ -21,13 +19,12 @@
   }
 
   &__container {
-    @include tablet {
-      display: flex;
-    }
+    display: flex;
+    justify-content: center;
   }
 
   &__page {
-    margin: 0 2rem;
+    margin: 0.25rem 0.4rem;
     text-decoration: none;
     color: #191918;
     font-weight: 600;
@@ -38,9 +35,6 @@
     &:hover {
       color: white;
     }
-  }
-
-  &__button-container {
   }
 
   &__signin-button {
