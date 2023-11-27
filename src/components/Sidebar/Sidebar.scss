@@ -1,18 +1,15 @@
-// @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 @use '../../styles/partials/mixin' as *;
 
 .sidebar {
   position: absolute;
   top: -0.6rem;
-
   width: 100%;
-  background: #1c1c19;
+  background: white;
   color: rgba(0, 0, 0, 0.87);
   -webkit-clip-path: circle(24px at 30px 24px);
   clip-path: circle(24px at 32px 24px);
   -webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
   transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
-  color: white;
   border-radius: 7px;
   padding-bottom: 2rem;
   z-index: 1;
@@ -52,8 +49,8 @@
     user-select: none;
 
     &:hover {
-      background: white;
-      color: black;
+      background: #1c1c19;
+      color: white;
     }
   }
 }
@@ -62,7 +59,7 @@
   position: relative;
   width: 20px;
   height: 2px;
-  background: white;
+  background: #1c1c19;
 }
 
 .navicon div:before,
@@ -71,7 +68,7 @@
   content: '';
   width: 20px;
   height: 2px;
-  background: white;
+  background: #1c1c19;
 
   position: absolute;
 }
