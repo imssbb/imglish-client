@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './FeedbackList.scss';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 const FeedbackList = () => {
   const { id } = useParams();
@@ -27,6 +28,8 @@ const FeedbackList = () => {
     <div className="feedbacklist">
       <h1 className="feedbacklist__title">Feedback</h1>
       <ul>
+        <Sidebar />
+
         {feedbacks.map((feedback) => (
           <li className="feedbacklist__container" key={feedback.id}>
             <Link to={`/feedbacks/details/${feedback.id}`}>

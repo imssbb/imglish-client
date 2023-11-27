@@ -15,7 +15,7 @@ function Sidebar() {
       <a className="navicon__menu" href="/feedbacks/1">
         Feedback
       </a>
-      <a className="navicon__menu" href="/">
+      <a className="navicon__menu" href="/student/1">
         Profile
       </a>
     </nav>

@@ -61,9 +61,7 @@ function SelectedMission() {
             {selectedMission.mission_title}
           </h1>
 
-          <pre className="selectedmission__pre">
-            {selectedMission.intro_text}
-          </pre>
+          <p className="selectedmission__intro">{selectedMission.intro_text}</p>
 
           {renderAudio(getAudio && getAudio[0].audio_link)}
 

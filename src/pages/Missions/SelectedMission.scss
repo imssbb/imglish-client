@@ -5,15 +5,43 @@
   position: relative;
 
   &__title {
-    background-color: #191918;
-    color: white;
+    background-color: #fae252;
+    // color: white;
     max-width: 20rem;
     margin: 3rem auto 1rem;
-    border-radius: 5px;
+    // border-radius: 25px;
     padding: 0.5rem;
+    font-size: 1.25rem;
+    // border: 0.5px solid#191918;
+    // box-shadow: 3px 3px #191918;
+
+    @include tablet {
+      font-size: 1.75rem;
+    }
   }
 
-  &__pre {
+  &__title {
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid #191918;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+
+    &::after {
+      content: '';
+      background-color: #fae252;
+
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      height: 100%;
+      top: 7px;
+      left: 7px;
+    }
+  }
+
+  &__intro {
     white-space: pre-wrap; // This allows wrapping on long lines
     overflow-wrap: break-word; // This ensures that long words don't overflow
     margin: 2rem auto;
@@ -33,6 +61,16 @@
     height: 1.7rem;
     padding: 0 1.5rem;
     border: none;
+    font-family: 'Merriweather', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    font-size: 0.75rem;
+    @include tablet {
+      font-size: 0.9rem;
+    }
+    &:focus {
+      outline-color: #ffb400;
+    }
   }
 
   &__spacing {
@@ -41,22 +79,26 @@
 }
 
 .showmission {
-  // background-color: #ffef94;
   &__title {
-    background-color: #191918;
+    background-color: #1c1c19;
     color: white;
-    max-width: 17rem;
+    max-width: 19rem;
     margin: 1rem auto 1rem;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 0.5rem;
+    font-size: 1.25rem;
+
+    @include tablet {
+      font-size: 1.75rem;
+    }
   }
 
   &__pattern-title {
     margin: 3rem auto 1rem;
-    background-color: #191918;
+    background-color: #1c1c19;
     color: white;
-    max-width: 12rem;
-    border-radius: 5px;
+    max-width: 13rem;
+    border-radius: 25px;
     padding: 0.5rem;
 
     @include tablet {
@@ -88,14 +130,12 @@
     margin: auto;
   }
 
-  &__pattern-list {
-  }
   &__practice-title {
-    background-color: #191918;
+    background-color: #1c1c19;
     color: white;
     max-width: 12rem;
     margin: 3rem auto 1rem;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 0.5rem;
     @include tablet {
       margin: 4rem auto 1rem;

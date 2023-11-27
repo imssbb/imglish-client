@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './SubmissionsPage.scss';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 function Submissions() {
   const [getsubmissions, setGetSubmissions] = useState();
@@ -27,6 +28,7 @@ function Submissions() {
 
   return (
     <div className="submissions">
+      <Sidebar />
       <h1 className="submissions__title">Submissions</h1>
       {error && <p className="error">{error}</p>}
       {getsubmissions && (

@@ -10,12 +10,14 @@
     border-radius: 5px;
     padding: 0.5rem;
     max-width: 50%;
+    font-size: 1.5rem;
 
     @include tablet {
       max-width: 20rem;
       margin: 2rem auto 1rem;
       border-radius: 5px;
       padding: 0.5rem;
+      font-size: 2rem;
     }
   }
 

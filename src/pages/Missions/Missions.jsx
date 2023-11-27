@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Missions.scss';
 import Sidebar from '../../components/Sidebar/Sidebar';
@@ -26,7 +26,7 @@ function Missions() {
   return (
     <div className="missionlist">
       <Sidebar />
-      <h1 className="missionlist__title">Missions Page</h1>
+      <h1 className="missionlist__title">Select Your Mission</h1>
       <ul className="missionlist__container">
         {missions &&
           missions.map((mission) => (
