@@ -82,6 +82,7 @@ function StudentPage() {
   }, []);
 
   const [loading, setLoading] = useState(false);
+  // eslint-disable-next-line
   const [_res, setRes] = useState({});
   const [file, setFile] = useState(null);
   const handleSelectFile = (e) => {
