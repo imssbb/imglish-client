@@ -7,10 +7,10 @@ import './Home.scss';
 // import heroImage from '../../assets/imgs/HAPPY.png';
 import heroImage from '../../assets/imgs/Brazuca - Airport.png';
 import missionImage1 from '../../assets/imgs/missions1.png';
-import missionImage2 from '../../assets/imgs/missions2.png';
+// import missionImage2 from '../../assets/imgs/missions2.png';
 import missionImage3 from '../../assets/imgs/mission3.png';
-import missionImage4 from '../../assets/imgs/missions4.png';
-import missionImage5 from '../../assets/imgs/missions5.png';
+// import missionImage4 from '../../assets/imgs/missions4.png';
+// import missionImage5 from '../../assets/imgs/missions5.png';
 import missionImage6 from '../../assets/imgs/missions6.png';
 
 function Home() {
