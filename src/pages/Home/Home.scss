@@ -1,17 +1,149 @@
 @use '../../styles/partials/mixin' as *;
 @use '../../styles/partials/variables' as *;
 
-.home {
-}
-
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  margin: 4rem;
+
+  @include tablet {
+    // margin: 5rem 12rem;
+    flex-direction: row;
+  }
+
   &__title {
+    font-size: 3rem;
+    max-width: 40rem;
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
   }
 
   &__description {
+    display: none;
+    margin-top: 1rem;
+    font-size: 0;
+    color: #1c1c19;
+
+    @include tablet {
+      display: block;
+    }
   }
 
   &__image {
+    width: 70%;
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+}
+
+.key-features {
+  padding: 2rem 4rem;
+  background-color: #fae252;
+  text-align: start;
+  display: flex;
+  @include desktop {
+    padding-bottom: 4rem;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    margin-right: 2rem;
+    @include desktop {
+      margin-right: 5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: auto;
+    // font-family: roboto;
+    @include desktop {
+      font-size: 1rem;
+    }
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__icon {
+    position: absolute;
+  }
+
+  &__image1 {
+    width: 12%;
+    position: absolute;
+  }
+}
+
+.herostruggle {
+  margin: 5rem 5rem 2rem;
+  // padding: 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  // background-color: #1c1c19;
+  // color: white;
+  padding-top: 3.5rem;
+  &__title {
+    font-size: 2.5rem;
+    max-width: 40rem;
+    text-align: end;
+    margin: -2rem 1rem 1rem;
+  }
+
+  &__description {
+    text-align: end;
+    font-size: 1.3rem;
+    max-width: 65vw;
+  }
+
+  &__image {
+    width: 20%;
+  }
+}
+
+.targetuser {
+  position: relative;
+  text-align: start;
+  background-color: #1c1c19;
+  color: white;
+
+  // margin: 12rem 5rem 5rem;
+
+  padding: 3rem 5rem 5rem;
+  &__image {
+    width: 50%;
+    position: absolute;
+    left: 5rem;
+    top: -22rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__image2 {
     width: 50%;
   }
+}
+
+.cta {
+  margin: 2rem;
+  padding: 1rem;
+  background-color: #1c1c19;
+  color: white;
 }

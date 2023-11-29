@@ -2,13 +2,14 @@
 
 .error {
   color: red;
-  font-size: 2rem;
+  font-size: 1rem;
+  margin: 4rem;
 }
 
 .submissions {
   position: relative;
   &__title {
-    background-color: #191918;
+    background-color: #1c1c19;
     color: white;
     margin: 2rem auto 1rem;
     border-radius: 5px;

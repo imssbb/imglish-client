@@ -19,7 +19,7 @@ function Submissions() {
         console.log(response.data);
       } catch (error) {
         console.error('Error fetching submissions:', error);
-        setError('You have not submitted any missions! Go and record!');
+        setError('You have not submitted any missions... Go and record!');
       }
     };
 

@@ -15,13 +15,13 @@ const Header = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="header__page">
-          <Link to="/about">About</Link>
+          <Link to="/">About</Link>
         </li>
         <li className="header__page">
-          <Link to="/service">Services</Link>
+          <Link to="/">Services</Link>
         </li>
         <li className="header__page">
-          <Link to="/Contact">Contact</Link>
+          <Link to="/">Contact</Link>
         </li>
       </ul>
       <div className="header__button-container">

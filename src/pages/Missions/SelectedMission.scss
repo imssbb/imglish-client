@@ -6,14 +6,10 @@
 
   &__title {
     background-color: #fae252;
-    // color: white;
     max-width: 20rem;
     margin: 3rem auto 1rem;
-    // border-radius: 25px;
     padding: 0.5rem;
     font-size: 1.25rem;
-    // border: 0.5px solid#191918;
-    // box-shadow: 3px 3px #191918;
 
     @include tablet {
       font-size: 1.75rem;
@@ -24,20 +20,21 @@
     letter-spacing: 1px;
     padding: 13px 50px 13px;
     outline: 0;
-    border: 1px solid #191918;
+    border: 1px solid #1c1c19;
     position: relative;
     background-color: rgba(0, 0, 0, 0);
+    border-radius: 4px;
 
     &::after {
       content: '';
       background-color: #fae252;
-
       width: 100%;
       z-index: -1;
       position: absolute;
       height: 100%;
       top: 7px;
       left: 7px;
+      border-radius: 4px;
     }
   }
 
@@ -82,15 +79,10 @@
   &__title {
     background-color: #1c1c19;
     color: white;
-    max-width: 19rem;
+    max-width: 14rem;
     margin: 1rem auto 1rem;
     border-radius: 25px;
     padding: 0.5rem;
-    font-size: 1.25rem;
-
-    @include tablet {
-      font-size: 1.75rem;
-    }
   }
 
   &__pattern-title {
@@ -123,7 +115,7 @@
   }
 
   &__pattern-container {
-    border: 1px solid #191918;
+    border: 1px solid #1c1c19;
     border-radius: 4px;
     padding-bottom: 1rem;
     max-width: 18rem;
@@ -156,7 +148,7 @@
   }
 
   &__breakdown {
-    border: 1px solid black;
+    border: 1px solid #1c1c19;
     border-radius: 4px;
     margin: 2rem 0;
     padding: 0 1rem 0;

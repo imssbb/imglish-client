@@ -26,14 +26,11 @@
   &__page {
     margin: 0.25rem 0.4rem;
     text-decoration: none;
-    color: #191918;
+    color: #1c1c19;
     font-weight: 600;
+
     @include tablet {
       margin: 0 0.75rem;
-    }
-
-    &:hover {
-      color: white;
     }
   }
 
@@ -43,7 +40,7 @@
   }
 
   &__signup-button {
-    background-color: #191918;
+    background-color: #1c1c19;
     color: white;
     padding: 0.5rem 1.2rem;
   }

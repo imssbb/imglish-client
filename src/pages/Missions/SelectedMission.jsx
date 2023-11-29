@@ -64,8 +64,8 @@ function SelectedMission() {
           <p className="selectedmission__intro">{selectedMission.intro_text}</p>
 
           {renderAudio(getAudio && getAudio[0].audio_link)}
-
           <h3 className="selectedmission__fill-in">Listen & Fill-in :</h3>
+
           <ul className="selectedmission__input-container">
             {JSON.parse(selectedMission.empty_dialogue).entries.map(
               (entry, index) => (
@@ -83,7 +83,7 @@ function SelectedMission() {
 
           {showAnswers && (
             <div className="showmission">
-              <h2 className="showmission__title">Today's Dialogue:</h2>
+              <h3 className="showmission__title">Today's Dialogue:</h3>
               <ul className="showmission__input-container">
                 {JSON.parse(selectedMission.main_dialogue).entries.map(
                   (entry, index) => (
