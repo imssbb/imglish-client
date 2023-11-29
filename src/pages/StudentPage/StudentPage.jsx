@@ -82,7 +82,7 @@ function StudentPage() {
   }, []);
 
   const [loading, setLoading] = useState(false);
-  const [res, setRes] = useState({});
+  const [_res, setRes] = useState({});
   const [file, setFile] = useState(null);
   const handleSelectFile = (e) => {
     setFile(e.target.files[0]);
