@@ -56,7 +56,7 @@
   }
 
   @include desktop {
-    padding-bottom: 3rem;
+    padding: 2rem 12rem 3rem;
   }
 
   &__title {
@@ -102,8 +102,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
   padding-top: 3.5rem;
+
+  @include desktop {
+    margin: 2rem 12rem;
+  }
   &__title {
     font-size: 2.5rem;
     max-width: 40rem;
@@ -138,6 +141,7 @@
   padding: 3rem 5rem 5rem;
 
   @include desktop {
+    padding: 2rem 12rem;
   }
   &__image {
     width: 50%;
