@@ -60,8 +60,7 @@ function Home() {
           Struggling with English Pronunciation?
         </h1>
         <h2 className="herostruggle__description">
-          Traditional resources not providing the feedback you need? Imglish
-          bridges the gap by offering personalized daily missions and
+          Imglish bridges the gap by offering personalized daily missions and
           constructive audio feedback to elevate your spoken English to new
           heights.
         </h2>
@@ -73,24 +72,19 @@ function Home() {
       </section>
 
       <section className="targetuser">
-        {/* <img
-          className="targetuser__image"
-          src={missionImage5}
-          alt="English Learners"
-        /> */}
         <h2 className="targetuser__title">Who Can Benefit from Imglish?</h2>
         <ul className="targetuser__list">
           <li className="targetuser__item">
-            English learners aiming to strengthen and practice their
+            🗣️ English learners aiming to strengthen and practice their
             pronunciation.
           </li>
           <li className="targetuser__item">
-            Individuals residing in English-speaking countries who wish to
+            🏠 Individuals residing in English-speaking countries who wish to
             revitalize and enhance their language skills.
           </li>
           <li className="targetuser__item">
-            Professionals seeking to elevate spoken communication to articulate
-            ideas clearly in workplace interactions.
+            📈 Professionals seeking to elevate spoken communication to
+            articulate ideas clearly in workplace interactions.
           </li>
           <img
             className="targetuser__image2"
@@ -98,12 +92,6 @@ function Home() {
             alt="English Learners"
           />
         </ul>
-
-        {/* <img
-          className="herostruggle__image"
-          src={missionImage4}
-          alt="English Learners"
-        /> */}
       </section>
 
       <section className="cta">
