@@ -17,7 +17,7 @@ Imglish is an innovative language learning platform designed to enhance English 
 
 ### Backend Repository
 
-The backend for Imglish is hosted in a separate repository. You can find it here.
+The backend for Imglish is hosted in a separate repository. You can find it [here](https://github.com/imssbb/imglish-api).
 
 ## Installation
 
@@ -130,7 +130,7 @@ The need for Imglish arose from a recognized gap in language learning resources,
 
 #### Frontend
 
-- **React Native:** Used for cross-platform mobile app development.
+- **React:** Used for cross-platform mobile app development.
 - **React Router:** Handling navigation within the app.
 - **Sass:** Stylesheet preprocessor for styling.
 
