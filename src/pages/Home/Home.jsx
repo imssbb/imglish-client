@@ -6,9 +6,9 @@ import './Home.scss';
 
 // Import images
 import heroImage from '../../assets/imgs/Brazuca - Airport.png';
-import keyfeature_image from '../../assets/imgs/mission3.png';
-import struggle_circle_image from '../../assets/imgs/missions1.png';
-import benefit_image from '../../assets/imgs/missions6.png';
+import keyfeatureClipboard from '../../assets/imgs/mission3.png';
+import struggleCircle from '../../assets/imgs/missions1.png';
+import benefitAirport from '../../assets/imgs/missions6.png';
 
 function Home() {
   useEffect(() => {
@@ -50,7 +50,7 @@ function Home() {
           <h2 className="key-features__title">Key Features</h2>
           <img
             className="key-features__image1"
-            src={keyfeature_image}
+            src={keyfeatureClipboard}
             alt="Man_with_clipboard"
           />
         </div>
@@ -79,7 +79,7 @@ function Home() {
         </h2>
         <img
           className="herostruggle__image"
-          src={struggle_circle_image}
+          src={struggleCircle}
           alt="Two_Character_Circle_Goal"
         />
       </section>
@@ -101,7 +101,7 @@ function Home() {
           </li>
           <img
             className="targetuser__image2"
-            src={benefit_image}
+            src={benefitAirport}
             alt="Two_man_sitting_airport"
           />
         </ul>
