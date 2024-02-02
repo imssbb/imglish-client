@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 import './Home.scss';
 
 // Import images
-// import heroImage from '../../assets/imgs/yellowchat.jpg';
-// import heroImage from '../../assets/imgs/HAPPY.png';
 import heroImage from '../../assets/imgs/Brazuca - Airport.png';
-import missionImage1 from '../../assets/imgs/missions1.png';
-// import missionImage2 from '../../assets/imgs/missions2.png';
-import missionImage3 from '../../assets/imgs/mission3.png';
-// import missionImage4 from '../../assets/imgs/missions4.png';
-// import missionImage5 from '../../assets/imgs/missions5.png';
-import missionImage6 from '../../assets/imgs/missions6.png';
+import keyfeature_image from '../../assets/imgs/mission3.png';
+import struggle_circle_image from '../../assets/imgs/missions1.png';
+import benefit_image from '../../assets/imgs/missions6.png';
 
 function Home() {
+  useEffect(() => {
+    const pingBackend = async () => {
+      try {
+        const response = await axios.get(process.env.REACT_APP_API_URL);
+        console.log('Ping', response);
+      } catch (error) {
+        console.error('Error pinging backend:', error);
+      }
+    };
+    pingBackend();
+  }, []);
+
   return (
     <>
       <section className="hero">
@@ -23,7 +32,11 @@ function Home() {
             English Pronunciation Mastery through Daily Missions.
           </h2>
         </div>
-        <img className="hero__image" src={heroImage} alt="English Learners" />
+        <img
+          className="hero__image"
+          src={heroImage}
+          alt="Hero_Banner_Airport_Travel"
+        />
 
         <p className="hero__description">
           Welcome to Imglish, where language learning meets innovation! We
@@ -37,8 +50,8 @@ function Home() {
           <h2 className="key-features__title">Key Features</h2>
           <img
             className="key-features__image1"
-            src={missionImage3}
-            alt="English Learners"
+            src={keyfeature_image}
+            alt="Man_with_clipboard"
           />
         </div>
 
@@ -66,8 +79,8 @@ function Home() {
         </h2>
         <img
           className="herostruggle__image"
-          src={missionImage1}
-          alt="English Learners"
+          src={struggle_circle_image}
+          alt="Two_Character_Circle_Goal"
         />
       </section>
 
@@ -88,8 +101,8 @@ function Home() {
           </li>
           <img
             className="targetuser__image2"
-            src={missionImage6}
-            alt="English Learners"
+            src={benefit_image}
+            alt="Two_man_sitting_airport"
           />
         </ul>
       </section>
